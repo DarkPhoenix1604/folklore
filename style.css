@@ -25,13 +25,14 @@ body {
 }
 
 .nav {
+    display: grid;
     position: sticky;
     top: 0;
-    display: grid;
     grid-auto-flow: column;
+    width: 100%;
     color: #333;
     padding: .25rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 li {
@@ -108,7 +109,9 @@ a {
     display: grid;
     list-style: none;
     padding: 0.4rem;
-    border-bottom: 1px solid black;
+    border: 2.5px solid hsla(0, 0%, 0%, 0.196);
+    margin: .25rem;
+    border-radius: 2rem;
     font-size: 1.4rem;
 }
 
@@ -128,6 +131,7 @@ a {
         width: 15rem;
         display: block;
         margin: 2rem;
+        border-radius: 50%;
     }
 }
 
@@ -145,6 +149,6 @@ a {
         width: 12rem;
         display: block;
         margin: 2rem;
+        border-radius: 50%;
     }
 }
-
