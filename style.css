@@ -37,16 +37,16 @@ body {
     height: 3rem;
 }
 
-.nav li {
+.nav .nav-links li {
     list-style: none;
 }
 
-.nav a {
+.nav .nav-links a {
     text-decoration: none;
     color: #fff;
 }
 
-.nav a:hover{
+.nav .nav-links a:hover {
     color: hsla(0, 100%, 22%, 0.966);
     font-weight: 800;
     transition: 3ms ease;
@@ -62,8 +62,66 @@ body {
     justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-    .nav-links ul {
+.nav .lines {
+    position: fixed;
+    top: 0.35rem;
+    height: 2.1rem;
+    right: 10vw;
+    display: grid;
+    overflow: 0;
+
+}
+
+.nav .lines .line {
+    width: 2rem;
+    border: .2rem solid black;
+    margin: .15rem;
+    padding: 0;
+    height: 0.4rem;
+}
+
+.nav .lines .cross:first-child {
+    translate: 0.2rem 0.7rem;
+    width: 2.4rem;
+    transform: rotate(45deg);
+}
+
+.nav .lines .cross:nth-child(2) {
+    display: none;
+}
+
+.nav .lines .cross:last-child {
+    width: 2.4rem;
+    translate: 0.2rem -.3rem;
+    transform: rotate(135deg);
+}
+
+.nav .show ul {
+    width: 50vw;
+    background-color: #000;
+    border-radius: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 10vw;
+    display: grid;
+    grid-auto-flow: row;
+    text-align: center;
+}
+
+.nav .phone-links a {
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav .phone-links a:hover {
+    color: hsla(0, 100%, 22%, 0.966);
+    font-weight: 800;
+    transition: 3ms ease;
+}
+
+@media screen and (max-width: 450px) {
+    .nav .nav-links ul {
         display: none;
     }
 
@@ -76,6 +134,41 @@ body {
         display: grid;
         width: 100vw;
         justify-content: center;
+    }
+
+    .nav .show ul {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width:768px) {
+    .nav .nav-links ul {
+        display: none;
+    }
+
+    .nav {
+        display: grid;
+        grid-auto-flow: column;
+    }
+
+    .logo {
+        display: grid;
+        width: 100vw;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .nav .lines {
+        display: none;
+    }
+
+    .nav .phone-links {
+        display: none;
+    }
+
+    .nav .nav-links ul {
+        display: grid;
     }
 }
 
@@ -165,7 +258,7 @@ body {
     }
 }
 
-.store{
+.store {
     position: absolute;
     top: 3rem;
     height: 100%;
@@ -174,9 +267,10 @@ body {
     align-items: center;
     justify-content: center;
     background: #000;
+    z-index: -1;
 }
 
-.store p{
+.store p {
     white-space: nowrap;
     color: hsla(212, 54%, 93%, 0.934);
     font-size: xx-large;
